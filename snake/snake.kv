@@ -1,0 +1,36 @@
+#:kivy 2.3.0
+
+
+<Snake>: 
+    width: 30 
+    canvas: 
+        Color: 
+            rgb: (0,1,0)
+        Line:
+            width: self.width 
+            points: root.points 
+            
+<SnakeFood>: 
+    size: 45, 45
+    canvas: 
+        Color: 
+            rgb: (1,0,0)
+        Ellipse: 
+            size: self.size 
+            pos: self.pos
+
+<SnakeGame>: 
+    snake: player 
+    food: s_food 
+
+    Snake: 
+        id: player 
+
+    SnakeFood: 
+        id: s_food
+
+    Label: 
+        text: "Points: " + str()
+        font_size: 30 
+        center_x: root.width//2 
+        top: root.top - 30 
